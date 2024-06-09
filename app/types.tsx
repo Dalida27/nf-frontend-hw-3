@@ -7,3 +7,16 @@ export interface Post {
   views: number;
   userId: number;
 }
+
+export interface PostUpdateData {
+  title: string;
+  body: string;
+  tags: string;
+}
+
+export interface PostData {
+  id: number;
+  title: string;
+  body: string;
+  tags: string;
+}

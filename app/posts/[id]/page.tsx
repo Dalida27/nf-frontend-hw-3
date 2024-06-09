@@ -10,13 +10,14 @@ const PostDetail = () => {
 
   useEffect(() => {
     if (id) {
+      const postId = Array.isArray(id) ? id[0] : id.toString();
+
       fetchPosts().then(data => {
-        const foundPost = data.posts.find(p => p.id === parseInt(id));
+        const foundPost = data.posts.find((p: Post) => p.id === parseInt(postId));
         setPost(foundPost || null);
       });
     }
   }, [id]);
-
   if (!post) return <div>Loading...</div>;
 
   return (
